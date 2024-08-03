@@ -12,17 +12,23 @@
 # Contains at least one special character (e.g., !, @, #, $, %, etc.)
 # Display the generated password to the user.
 
+# Note:
+
+# You can utilize the random module in Python to generate random characters and build the password. Consider using the string module in Python to access sets of characters (uppercase, lowercase, numbers, and special characters). Make sure to include clear instructions and error handling for invalid input.
+
 from random import choice, shuffle
 from string import punctuation, ascii_uppercase, ascii_lowercase, digits
 
 def pass_generator (size=12, chars=punctuation + ascii_uppercase + ascii_lowercase + digits):
+    # Generating a string which will pass through condition 
+    # There are no if conditions for checking due to optimization. Code will execute faster.
     password=[(choice(punctuation)), (choice(ascii_uppercase)), (choice(ascii_lowercase)), (choice(digits))]
     for _ in range(size-4):
         password.append(choice(chars))
     shuffle(password)
     return ''.join(str(item) for item in password)
 
-print("Welcome to the Linux User Password Generator!")
+print("Welcome to the Linux User Password Generator!")#
 try:
     length = int(input("Please enter the desired password length: "))
     try:
