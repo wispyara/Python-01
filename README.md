@@ -1,1 +1,1 @@
-Just doing some python homeworks from "DevOps 01" course. 
+To have better experience using this repository get acquainted with venv.sh file.
